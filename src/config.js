@@ -5,9 +5,9 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection [edited1]";
-const description = "Remember to replace this description [edited1]";
-const baseUri = "ipfs://blabla1";
+const namePrefix = "Nerd Collection";
+const description = "NFT Collection for testing purposes ";
+const baseUri = "ipfs://QmThFhNGunzEygK1NCiNCcxJxJ8uSZUpSHTN8BTzj2jLUu";
 const externalLink = "https://blablabla1/";
 
 const solanaMetadata = {
@@ -25,7 +25,7 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 50,
+    growEditionSizeTo: 1000,
     layersOrder: [
       { name: "Background" },
       { name: "Shirt" },

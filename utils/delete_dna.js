@@ -16,6 +16,7 @@ let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 let data = JSON.parse(rawdata);
 
 data.forEach((item) => {
+  let number = item.edition;
   if (network == NETWORK.sol) {
     item.name = `${namePrefix} #${item.edition}`;
     item.description = description;
@@ -23,17 +24,16 @@ data.forEach((item) => {
   } else {
     item.name = `${namePrefix} #${item.edition}`;
     item.description = description;
-    item.image = `${baseUri}/${item.edition}.png`;
+    item.image = `${baseUri}/${number}.png`;
     item.external_url = externalLink;
   }
 
   delete item["dna"];
-  let number = item.edition;
   delete item["edition"];
-  // delete item["external_url"];
+  delete item["external_url"];
 
   fs.writeFileSync(
-    `${basePath}/build/json/${number}.json`,
+    `${basePath}/build/json/${number - 1}`,
     JSON.stringify(item, null, 2)
   );
 });
